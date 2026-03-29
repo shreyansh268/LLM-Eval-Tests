@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(venvScriptspip.exe list:*)",
+      "Bash(findstr /i \"langchain crewai deepeval langgraph ollama\")",
+      "Read(//mnt/c/Users/shrey/source/repos/LLM-Test-Evals/**)",
+      "Bash(./venv/Scripts/pip.exe list:*)",
+      "Bash(grep -v \"^$\")"
+    ]
+  }
+}

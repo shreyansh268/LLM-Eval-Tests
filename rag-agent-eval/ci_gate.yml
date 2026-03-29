@@ -1,0 +1,16 @@
+# .github/workflows/eval-on-pr.yml
+
+name: RAG + Agent Evaluation on PR
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  eval:
+  runs-on:ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+    - run: pip install ragas deepeval datasets --break-system-packages
+    - name: RAGAS Quality gate
+      run: python evals/rag/run_ragas.py
+    - name: DeepEval Quality gate
+      run: python evals/agent/run_deepeval.py
